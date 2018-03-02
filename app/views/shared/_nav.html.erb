@@ -1,6 +1,18 @@
-<div>
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'Client', pages_client_path %>
-  <%= link_to 'Events', events_path %>
+<div class="masthead clearfix">
+  <div class="inner">
+    <h3 class="masthead-brand nav-name">Roman</h3>
+    <nav class="nav nav-masthead app-nav">
+      <%= link_to 'Home', root_path %>
+      <% if current_user %>
+        <%= link_to 'Client', pages_client_path %>
+        <%= link_to 'Events', events_path %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Edit Profile', edit_user_registration_path(current_user) %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path %>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
+    </nav>
+  </div>
 </div>
 
