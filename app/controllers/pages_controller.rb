@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def client
+    @events = Event.new
   end
 end

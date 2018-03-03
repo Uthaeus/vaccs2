@@ -1,2 +1,6 @@
-<h1>Pages#client</h1>
-<p>Find me in app/views/pages/client.html.erb</p>
+<%= simple_form_for @events do |f| %>
+  <%= f.input :title %>
+  <%= f.input :start %>
+  <%= f.input :end %>
+  <%= f.button :submit %>
+<% end %>
